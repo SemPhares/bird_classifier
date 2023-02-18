@@ -1,5 +1,4 @@
 data
 extra_data
-bird-classification.ipynb
+notebooks/bird-classification.ipynb
 *.html
-*.ssh

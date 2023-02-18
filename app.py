@@ -9,8 +9,8 @@ import streamlit.components.v1 as components
 #load model
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-st.session_state.model = torch.load('mobilenet_bird_classifer.pkl', map_location=torch.device(device))
-st.session_state.classes =  torch.load('labels_classes.pkl')
+st.session_state.model = torch.load('models/mobilenet_bird_classifer.pkl', map_location=torch.device(device))
+st.session_state.classes =  torch.load('models/labels_classes.pkl')
 
 st.session_state.test_transforms = transforms.Compose(
     [
@@ -20,8 +20,11 @@ st.session_state.test_transforms = transforms.Compose(
 
 #set up streamlit app header
 
-st.image("bird-app.png", width=200)
-st.header("Bird Classification")
+with st.columns(3)[1]:
+    st.header("Bird Classifier")
+    # st.markdown("<h1 style='text-align: center; color: black;'>Bird Classifier</h1>", unsafe_allow_html=True)
+    st.image("images/bird-app.png", width=200)
+
 
 #initiate lists
 images_names = []
