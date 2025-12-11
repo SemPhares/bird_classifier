@@ -69,10 +69,6 @@ for uploaded_file in uploaded_files:
     except Exception as e:
         st.error(f"Échec du traitement de l'image {uploaded_file.name}: {e}")
 
-#some buttons
-rerun = st.button('Rerun or clear')
-if rerun:
-    st. experimental_rerun()
 
 submit = st.button("Submit")
 
